@@ -36,13 +36,13 @@ services:
       DB_NAME: unifi
       RUNAS_UID0: "false"
     ports:
-      - "3478:3478/udp" # STUN
-      - "6789:6789/tcp" # Speed test
-      - "8080:8080/tcp" # Device/ controller comm.
-      - "8443:8443/tcp" # Controller GUI/API as seen in a web browser
-      - "8880:8880/tcp" # HTTP portal redirection
-      - "8843:8843/tcp" # HTTPS portal redirection
-      - "10001:10001/udp" # AP discovery
+      - "10.1.1.203:3478:3478/udp" # STUN
+      - "10.1.1.203:6789:6789/tcp" # Speed test
+      - "10.1.1.203:8080:8080/tcp" # Device/ controller comm.
+      - "10.1.1.203:8443:8443/tcp" # Controller GUI/API as seen in a web browser
+      - "10.1.1.203:8880:8880/tcp" # HTTP portal redirection
+      - "10.1.1.203:8843:8843/tcp" # HTTPS portal redirection
+      - "10.1.1.203:10001:10001/udp" # AP discovery
   logs:
     image: bash
     container_name: ${COMPOSE_PROJECT_NAME}_logs
