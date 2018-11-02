@@ -46,6 +46,8 @@ services:
   logs:
     image: bash
     container_name: ${COMPOSE_PROJECT_NAME}_logs
+    networks:
+      - unifi
     depends_on:
       - controller
     command: bash -c 'tail -F /unifi/log/*.log'
