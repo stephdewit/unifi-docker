@@ -147,8 +147,7 @@ For Unifi-in-Docker, this uses the most recent stable version.
 
 | Tag                                                                                       | Description                                     | Changelog                                                                                                                       |
 |-------------------------------------------------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| [`latest` `v8.5.6`](https://github.com/jacobalberty/unifi-docker/blob/master/Dockerfile) | Current Stable: Version 8.5.6 as of 2024-10-07  | [Change Log 8.5.6](https://community.ui.com/releases/UniFi-Network-Application-8-5-6/bfa15dd8-8b58-4d40-9d83-73ebe8c9a955)     |
-| [`rc`](https://github.com/jacobalberty/unifi-docker/blob/rc/Dockerfile)                   | Release Candidate: 7.2.92-rc as of 2022-07-29   | [Change Log 7.2.91-rc](https://community.ui.com/releases/UniFi-Network-Application-7-2-91/cdac73f0-7426-4276-ace8-8a96c656ba65) |
+| [`latest` `v8.6.9`](https://github.com/jacobalberty/unifi-docker/blob/master/Dockerfile) | Current Stable: Version 8.6.9 as of 2024-11-10  | [Change Log 8.6.9](https://community.ui.com/releases/UniFi-Network-Application-8-6-9/e4bd3f71-a2c4-4c98-b12a-a8b0b1c2178e)     |
 | [`stable-6`](https://github.com/jacobalberty/unifi-docker/blob/stable-6/Dockerfile)       | Final stable version 6 (6.5.55)                 | [Change Log 6.5.55](https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e)    |
 | [`stable-5`](https://github.com/jacobalberty/unifi-docker/blob/stable-5/Dockerfile)       | Final stable version 5 (5.4.23)                 | [Change Log 5.14.23](https://community.ui.com/releases/UniFi-Network-Controller-5-14-23/daf90732-30ad-48ee-81e7-1dcb374eba2a)   |
 
@@ -175,6 +174,8 @@ To do this:
 * Check the "Enable" box, and enter the IP address of the Docker host machine. 
 * Save settings in Unifi Controller
 * Restart UniFi-in-Docker container with `docker stop ...` and `docker run ...` commands.
+
+_Hint: Port 10001 should be forwareded to make it work._
 
 See [Side Projects](https://github.com/jacobalberty/unifi-docker/blob/master/Side-Projects.md#other-techniques-for-adoption) for
 other techniques to get Unifi devices to adopt your
@@ -287,6 +288,7 @@ expose the first three with the `-p ...` option.
 * 8843/tcp - HTTPS portal _(optional)_
 * 8880/tcp - HTTP portal _(optional)_
 * 6789/tcp - Speed Test (unifi5 only) _(optional)_
+* 10001/udp - Used for device discovery _(optional)_
 
 See [UniFi - Ports Used](https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used) for more information.
 
